@@ -1,0 +1,511 @@
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/processing.js/1.4.1/processing-api.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <title>Scouting Sheet</title>
+</head>
+
+ <!-- The Form put into a table -->
+
+
+
+<body>
+ <p> <h2>  Scouting Sheet </h2> </p>
+</font>
+
+ <table>
+
+   <tr>
+
+    <td>
+      <b> 
+       <b> <br />Your Name </b> <br/> 
+       <input id="Name" type="text" name="Name" placeholder="Your Name" ><a href="#" class="hintanchor" onMouseover="showhint('Put your name here. ', this, event, '200px')">[?]</a><br/>
+       <br/> 
+       Team # </b> <br/> 
+       <input id="Number" type="text" name="team" placeholder="Team" > <a href="#" class="hintanchor" onMouseover="showhint('Place Team Number Here. ', this, event, '200px')">[?]</a> <br/>
+       <b>  <br />
+       Match #  </b> <br/>
+       <input id="Match" type="text" name="match" placeholder="Match"  > <a href="#" class="hintanchor" onMouseover="showhint('Put match number here. ', this, event, '200px')">[?]</a> <br/>
+          
+         
+        </td>
+      </tr>
+
+      <tr> 
+        <td>
+          <h1><b> Autonomous </h1> </b>
+        </tr>
+      </td>
+
+      <tr>
+        <td width="200px">Has Autonomous? <a href="#" class="hintanchor" onMouseover="showhint('Robot moves in the first 15 seconds. ', this, event, '200px')">[?]</a><br /> <br/></td> 
+        <td>
+          <select id="Auton">
+            <option value="" selected="selected"></option>
+          <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </td>
+      </tr>
+      
+
+      <tr>
+        <td width="200px">Fouls? <a href="#" class="hintanchor" onMouseover="showhint('Did the robot get a foul during autonomous. ', this, event, '200px')">[?]</a><br /> <br/></td>
+        <td>
+          <select id="Fouls">
+             <option value="" selected="selected"></option>
+          <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </td>
+      </tr>
+
+
+      <tr>
+      <td width="200px">Rotor Turn? <a href="#" class="hintanchor" onMouseover="showhint('Did the team get their rotor to turn during Autonomous. ', this, event, '200px')">[?]</a><br /> <br/></td>
+        <td>
+          <select id="Rotor">
+            <option value="" selected="selected"></option>
+          <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </td>
+      </tr>
+
+
+      <tr> 
+        <td>
+          <h1><b> Teleop. </h1> </b>
+        </tr>
+      </td>
+
+
+      <tr>
+        <td width="200px">Number of Gears? <a href="#" class="hintanchor" onMouseover="showhint('How many gears did the robot get during Teleop.  ', this, event, '200px')">[?]</a><br /> <br/></td>
+        <td>
+         <input id="Gears" type="text" name="Gears" placeholder="Number of Gears"  > 
+       </td>
+     </tr>
+
+
+     <tr>
+      <td width="200px">Hopper used? <a href="#" class="hintanchor" onMouseover="showhint('Did the robot go over to the hopper and press the pad to get the balls. ', this, event, '200px')">[?]</a><br /> <br/></td>
+      <td>
+        <select id="Hopper">
+           <option value="" selected="selected"></option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+      </td>
+    </tr>
+
+
+    <tr>
+      <td width="200px">Plays Defense? <a href="#" class="hintanchor" onMouseover="showhint('Does the robot go to the other side of the field to block shots and goes after the other robot. ', this, event, '200px')">[?]</a><br /> <br/></td>
+      <td>
+        <select id="Defense">
+           <option value="" selected="selected"></option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+      </td>
+    </tr>
+
+
+    <tr>
+      <td width="200px">High Goal Robot? <a href="#" class="hintanchor" onMouseover="showhint('If the robot has a high shooter, it is a high goal robot. ', this, event, '200px')">[?]</a><br /> <br/></td>
+      <td>
+        <select id="High_Goal">
+          <option value="" selected="selected"></option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+      </td>
+    </tr>
+
+
+    <tr>
+      <td width="200px">About how many Scored in High Goal? <a href="#" class="hintanchor" onMouseover="showhint('How many balls/points did the robot score in the high goal? ', this, event, '200px')">[?]</a><br /> <br/></td>
+      <td>
+        <input id="HighGoal" type="text" name="HighGoal" placeholder="# in High Goal"  > 
+      </td>
+    </tr>
+
+
+    <tr>
+      <td width="200px">Low Goal Robot?<a href="#" class="hintanchor" onMouseover="showhint('Does the robot shoot in the low goal? ', this, event, '200px')">[?]</a><br /> <br/></td>
+      <td>
+        <select id="Low_Goal">
+        <option value="" selected="selected"></option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+      </td>
+    </tr>
+
+
+    <tr>
+      <td width="200px">About how many Scored in Low Goal? <a href="#" class="hintanchor" onMouseover="showhint('How many balls/point did the robot score in the low goal? ', this, event, '200px')">[?]</a><br /> <br/></td>
+      <td>
+        <input id="LowGoal" type="text" name="LowGoal" placeholder="# in Low Goal"  > 
+      </td>
+    </tr>
+
+    
+    <tr>
+      <td width="200px">Accuracy? <a href="#" class="hintanchor" onMouseover="showhint('How accurate is the shooting of the robot? ', this, event, '200px')">[?]</a><br /> <br/></td>
+      <td>
+        <input id="Accuracy" type="text" name="Accuracy" placeholder="Accuracy?"  > 
+      </td>
+    </tr>
+
+
+    <tr> 
+      <td>
+        <h1><b> Extra Data </h1> </b>
+      </tr>
+    </td>
+
+
+    <tr>
+      <td width="250px">Were the drivers productive? <a href="#" class="hintanchor" onMouseover="showhint('Such as did they get anything done? Were they productive and was a help to their alliance partners? ', this, event, '200px')">[?]</a><br /> <br/></td>
+      <td>
+        <select id="Drivers">
+          <option value="" selected="selected"></option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+      </td>
+    </tr>
+
+
+    <tr>
+      <td width="200px">Teamwork? <a href="#" class="hintanchor" onMouseover="showhint('Did the team work with their alliance such as were they helping their teammates or did they always get in the way and not listen. ', this, event, '200px')">[?]</a><br /> <br/></td>
+      <td>
+        <select id="Teamwork">
+          <option value="" selected="selected"></option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+      </td>
+    </tr>
+
+
+    <tr>
+      <td width="200px">Patterns: <a href="#" class="hintanchor" onMouseover="showhint('Was their any repetitiveness with the auton or during teleop? Did they go for gears the whole time and then the balls. If so, explain? ', this, event, '200px')">[?]</a><br /> <br/></td>
+      <td>
+        <textarea input id="Patterns" placeholder="Patterns"></textarea>
+      </td>
+    </tr>
+
+
+    <tr>
+      <td width="200px">Comments: <a href="#" class="hintanchor" onMouseover="showhint('Any comments that we should know about the robot, such as did the robot fall over multiple times? Peices kept falling off? Etc.  ', this, event, '200px')">[?]</a><br /> <br/></td>
+      <td>
+      
+      <textarea input id="Comments" placeholder="Comments"></textarea>
+      </td>
+    </tr>
+
+
+
+<tr>
+      <td width="200px">Final Score of both alliances: <a href="#" class="hintanchor" onMouseover="showhint('Score of both teams. ', this, event, '200px')">[?]</a><br /> <br/></td>
+      <td>
+      
+      <textarea input id="Score" placeholder="Score of Blue alliance"></textarea>
+      <textarea input id="Score2" placeholder="Score of Red alliance"></textarea>
+      </td>
+    </tr>
+
+
+
+
+
+
+
+  </table>
+
+  <!--  Download Button  -->
+
+  <br> 
+  <button id="DownloadButton">Create file</button>
+
+<!--  If we need a refresh button uncomment down below (highlight it all and Shift + /) 
+  and and change destination path to this file path -->
+<!--   <button><a href="file:///C:/Users/Austin/Documents/Scouting2_.html" > Refresh Form </a> </button> -->
+
+  <!-- This is so it doesn't display that text box preview -->
+  <div id="generated" style="display:none">
+    <h1>
+      <a href="#" id="DownloadLink">Download</a>
+
+
+      <!-- Commented that down below so it doesn't show editable preview menu -->
+
+     <!--    <textarea id="ResultXml" style="width: 100%; height: 30em"></textarea> -->
+
+
+    </div>
+  </body>
+
+
+
+
+
+
+
+
+  </html>
+
+  <!-- template script -->
+
+  <script> 
+    $(function () {
+      $('#DownloadButton').click(update);
+    });
+
+    var template = [
+'',
+'Name- <?Name?>',
+    '',
+    'Team Number- <?Number?>',
+    'Match Number- <?Match?>',
+
+    '',
+    'Autonomous Period',
+    '',
+
+    'Has Autonomous? <?Auton?>',
+    'Fouls? <?Fouls?>',
+    'Got Rotor Turning? <?Rotor?>',
+
+    '',
+
+    'Teleop.',
+    '',
+
+    'Number of Gears? <?Gears?>',
+    'Hopper used? <?Hopper?>',
+    'Plays defense? <?Defense?>',
+    'Can Climb? <?Climb?>',
+    'High Goal Robot? <?High_Goal?>',
+    'About how many scored in high goal: <?HighGoal?>',
+    'Low Goal Robot? <?Low_Goal?>',
+    'About how many scored in low goal: <?LowGoal?>',
+    'Shooting Accuracy? <?Accuracy?>',
+
+    '',
+    'Extra Data',
+    '',
+
+    'Were the drivers productive? <?Drivers?>',
+    'Teamwork? <?Teamwork?>',
+    'Any Patterns: <?Patterns?>',
+    'Comments: <?Comments?>',
+
+'Score for Red Alliance- <?Score?>',
+'',
+'Score for Blue Alliance- <?Score2?>',
+    '',
+
+    '',
+
+    ].join('\r\n');
+
+
+
+//  this function is where my 'variables' are declared
+
+function update() {
+  var variables = {
+    'Number': $('#Number').val(),
+    'Match': $('#Match').val(),
+    'Auton': $('#Auton').val(),
+    'Fouls': $('#Fouls').val(),
+    'Rotor': $('#Rotor').val(),
+    'Gears': $('#Gears').val(),
+    'Fouls2': $('#Fouls2').val(),
+    'Hopper': $('#Hopper').val(),
+    'Defense': $('#Defense').val(),
+    'Climb': $('#Climb').val(),
+    'High_Goal': $('#High_Goal').val(),
+    'HighGoal': $('#HighGoal').val(),
+    'Low_Goal': $('#Low_Goal').val(),
+    'LowGoal': $('#LowGoal').val(),
+    'Accuracy': $('#Accuracy').val(),
+    'Drivers': $('#Drivers').val(),
+    'Teamwork': $('#Teamwork').val(),
+    'Patterns': $('#Patterns').val(),
+    'Comments': $('#Comments').val(),
+    'Name': $('#Name').val(),
+    'Score': $('#Score').val(), 
+    'Score2': $('#Score2').val()
+    
+  };
+
+  var newXml = template.replace(/<\?(\w+)\?>/g,
+    function(match, name) {
+      return variables[name];
+    });
+
+  
+  $('#ResultXml').val(newXml);
+  $('#DownloadLink')
+  .attr('href', 'data:text/xml;base64,' + btoa(newXml))
+  .attr('download', '<?Number?>'+ '<?Match?>' + '.xml');
+  $('#generated').show();
+  
+
+    // This is basically how it creates the form and allows you to download it 
+}
+
+
+  if (!window.btoa) {
+  // Source: http://www.koders.com/javascript/fid78168FE1380F7420FB7B7CD8BAEAE58929523C17.aspx
+  btoa = function (input) {
+    var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
+    
+    var result = '';
+    var chr1, chr2, chr3;
+    var enc1, enc2, enc3, enc4;
+    var i = 0;
+    
+    do {
+      chr1 = input.charCodeAt(i++);
+      chr2 = input.charCodeAt(i++);
+      chr3 = input.charCodeAt(i++);
+      
+      enc1 = chr1 >> 2;
+      enc2 = ((chr1 & 3) << 4) | (chr2 >> 4);
+      enc3 = ((chr2 & 15) << 2) | (chr3 >> 6);
+      enc4 = chr3 & 63;
+      
+      if (isNaN(chr2)) {
+        enc3 = enc4 = 64;
+      } else if (isNaN(chr3)) {
+        enc4 = 64;
+      }
+      
+      result += chars.charAt(enc1) + chars.charAt(enc2) + chars.charAt(enc3) + chars.charAt(enc4);
+    } while (i < input.length);
+
+    return result;
+  };
+
+
+}
+</script>
+
+<style type="text/css">
+
+#hintbox{ /*CSS for pop up hint box */
+position:absolute;
+top: 0;
+background-color: lightyellow;
+width: 150px; /*Default width of hint.*/ 
+padding: 3px;
+border:1px solid black;
+font:normal 11px Verdana;
+line-height:18px;
+z-index:100;
+border-right: 3px solid black;
+border-bottom: 3px solid black;
+visibility: hidden;
+}
+
+.hintanchor{ /*CSS for link that shows hint onmouseover*/
+font-weight: bold;
+color: navy;
+margin: 3px 8px;
+}
+
+</style>
+
+<script type="text/javascript">
+
+/***********************************************
+* Show Hint script- (c) Dynamic Drive (www.dynamicdrive.com)
+* Please keep this notice intact
+* Visit http://www.dynamicdrive.com/ for this script and 100s more.
+***********************************************/
+    
+var horizontal_offset="9px" //horizontal offset of hint box from anchor link
+
+/////No further editting needed
+
+var vertical_offset="0" //horizontal offset of hint box from anchor link. No need to change.
+var ie=document.all
+var ns6=document.getElementById&&!document.all
+
+function getposOffset(what, offsettype){
+var totaloffset=(offsettype=="left")? what.offsetLeft : what.offsetTop;
+var parentEl=what.offsetParent;
+while (parentEl!=null){
+totaloffset=(offsettype=="left")? totaloffset+parentEl.offsetLeft : totaloffset+parentEl.offsetTop;
+parentEl=parentEl.offsetParent;
+}
+return totaloffset;
+}
+
+function iecompattest(){
+return (document.compatMode && document.compatMode!="BackCompat")? document.documentElement : document.body
+}
+
+function clearbrowseredge(obj, whichedge){
+var edgeoffset=(whichedge=="rightedge")? parseInt(horizontal_offset)*-1 : parseInt(vertical_offset)*-1
+if (whichedge=="rightedge"){
+var windowedge=ie && !window.opera? iecompattest().scrollLeft+iecompattest().clientWidth-30 : window.pageXOffset+window.innerWidth-40
+dropmenuobj.contentmeasure=dropmenuobj.offsetWidth
+if (windowedge-dropmenuobj.x < dropmenuobj.contentmeasure)
+edgeoffset=dropmenuobj.contentmeasure+obj.offsetWidth+parseInt(horizontal_offset)
+}
+else{
+var windowedge=ie && !window.opera? iecompattest().scrollTop+iecompattest().clientHeight-15 : window.pageYOffset+window.innerHeight-18
+dropmenuobj.contentmeasure=dropmenuobj.offsetHeight
+if (windowedge-dropmenuobj.y < dropmenuobj.contentmeasure)
+edgeoffset=dropmenuobj.contentmeasure-obj.offsetHeight
+}
+return edgeoffset
+}
+
+function showhint(menucontents, obj, e, tipwidth){
+if ((ie||ns6) && document.getElementById("hintbox")){
+dropmenuobj=document.getElementById("hintbox")
+dropmenuobj.innerHTML=menucontents
+dropmenuobj.style.left=dropmenuobj.style.top=-500
+if (tipwidth!=""){
+dropmenuobj.widthobj=dropmenuobj.style
+dropmenuobj.widthobj.width=tipwidth
+}
+dropmenuobj.x=getposOffset(obj, "left")
+dropmenuobj.y=getposOffset(obj, "top")
+dropmenuobj.style.left=dropmenuobj.x-clearbrowseredge(obj, "rightedge")+obj.offsetWidth+"px"
+dropmenuobj.style.top=dropmenuobj.y-clearbrowseredge(obj, "bottomedge")+"px"
+dropmenuobj.style.visibility="visible"
+obj.onmouseout=hidetip
+}
+}
+
+function hidetip(e){
+dropmenuobj.style.visibility="hidden"
+dropmenuobj.style.left="-500px"
+}
+
+function createhintbox(){
+var divblock=document.createElement("div")
+divblock.setAttribute("id", "hintbox")
+document.body.appendChild(divblock)
+}
+
+if (window.addEventListener)
+window.addEventListener("load", createhintbox, false)
+else if (window.attachEvent)
+window.attachEvent("onload", createhintbox)
+else if (document.getElementById)
+window.onload=createhintbox
+
+</script>
