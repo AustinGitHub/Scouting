@@ -27,9 +27,13 @@ By adding it to home screen you can just click on the home screen app it makes a
 - No Security Issues, whereas with google sheets there is a possibility.
 
 <b> Down Fall </b> 
-Doesn't work on iPhones because when they did their iOS 9 update, it ruined how you can use this locally. 
+Doesn't work on iPhones/Apple products because when they did their iOS 9 update, it ruined how you can use this locally. 
 https://gyazo.com/b65789f93b869518a59897f38a569d08 
 
 
 
 In the branch Older-Ver is my other ways of doing this but didn't work exactly how we wanted. This took me over 17 hours of research and making and then having to redo the forms each time. 
+
+
+In the near time future I will make this into an app that will perform the same things but will make it work on both devices. 
+I will update this sheet with each years game and what the requirements will be for it. 
