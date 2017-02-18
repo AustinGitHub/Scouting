@@ -17,12 +17,15 @@ I created this since there are multiple ways to scout but not one definite way.
 3. Go to gooogle drive on your phone, recent, then click on the file <br /> 
 4. Click open with and then click chrome. <br /> 
 5. Once it loads on chrome click the 3 dots next to the tab and click add to home screen <br /> 
-6. Then email the csv to the scout lead or whoever is taking charge of scouting <br />
-7. Put all the csv files into one folder (should be 6 if 6 people are scouting 1 team each) <br /> 
-8. Place the cmd file into that folder, then double click on it <br /> 
-9. This will take all 6 or so files and combine them into one file. Top row is excluded from all the others and only keeps one top row, so no need to worry about having the same top row 6 times in one file <br /> 
+You are now able to access it from your home screen. 
 
-By adding it to home screen you can just click on the home screen app it makes and it will instantly load the file within chrome. 
+<b> How to CSV <b> <br />
+1. Then email the csv to the scout lead or whoever is taking charge of scouting <br />
+2. Put all the csv files into one folder (should be 6 if 6 people are scouting 1 team each) <br /> 
+3. Place the cmd file into that folder, then double click on it <br /> 
+4. This will take all 6 or so files and combine them into one file. Top row is excluded from all the others and only keeps one top row, so no need to worry about having the same top row 6 times in one file <br /> 
+
+
 
 <b> Features </b> 
 -  WORKS OFFLINE (Only on android / Tablets and laptops) 
