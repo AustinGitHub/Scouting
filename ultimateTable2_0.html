@@ -1,0 +1,273 @@
+
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/javascript"> 
+window.onbeforeunload = function() {
+  return "DONT LEAVE!!!!";
+};
+</script>
+
+
+<script type="text/javascript">
+function saveEdits() {
+    //get the editable elements.
+    var editElems = {
+        'qualifier': document.getElementById('qualifier').innerHTML,
+        'name': document.getElementById('name').innerHTML,
+        'team': document.getElementById('team').innerHTML,
+        'auton': document.getElementById('auton').innerHTML,
+        'rotor': document.getElementById('rotor').innerHTML,
+        'gears': document.getElementById('gears').innerHTML,
+        'fouls': document.getElementById('fouls').innerHTML,
+        'hopper': document.getElementById('hopper').innerHTML,
+        'defense': document.getElementById('defense').innerHTML,
+        'climb': document.getElementById('climb').innerHTML,
+        'highgoal': document.getElementById('highgoal').innerHTML,
+        'highgoalscore': document.getElementById('highgoalscore').innerHTML,
+        'lowgoal': document.getElementById('lowgoal').innerHTML,
+        'lowgoalscore': document.getElementById('lowgoalscore').innerHTML,
+        'shooting': document.getElementById('shooting').innerHTML,
+        'productive': document.getElementById('productive').innerHTML,
+        'teamwork': document.getElementById('teamwork').innerHTML,
+        'patterns': document.getElementById('patterns').innerHTML,
+        'comments': document.getElementById('comments').innerHTML,
+        'score': document.getElementById('score').innerHTML
+    };
+
+    //save the content to local storage. Stringify object as localstorage can only support string values
+    localStorage.setItem('userEdits', JSON.stringify(editElems));
+
+    //write a confirmation to the user
+    document.getElementById("update").innerHTML="Edits saved!";
+}
+function checkEdits(){
+    //find out if the user has previously saved edits
+    var userEdits = localStorage.getItem('userEdits');
+    if(userEdits){
+        userEdits = JSON.parse(userEdits);
+        for(var elementId in userEdits){
+          document.getElementById(elementId).innerHTML = userEdits[elementId];
+        }
+    }
+}
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+  
+  <style type="text/css">
+    </style>
+
+
+<style>
+body
+{
+margin:0px; auto;
+padding:0px;
+font-family:helvetica;
+}
+#wrapper
+{
+  width:995px;
+  padding:0px;
+  margin:0px auto;
+  font-family:helvetica;
+  text-align:center;
+}
+h1
+{
+  text-align:center;
+  font-size:35px;
+  color:#2E2E2E;
+  padding:10px;
+}
+h1 p
+{
+    font-size:20px;
+    margin:0px;
+    color:#585858;
+}
+td
+{
+    width:50px;
+    text-align:center;
+}
+input[type="button"]
+{
+    margin-top:50px;
+}
+
+</style>
+    <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+  
+  <style type="text/css">
+    [contentEditable=true]:empty:not(:focus):before{
+    content:attr(data-placeholder) }
+div{
+height:16px;    
+border:0px solid black;
+
+
+  
+  </style>
+
+
+
+<script type='text/javascript'>//<![CDATA[
+$(function(){
+var counter = 1;
+jQuery('a.add-author').click(function(event){
+    event.preventDefault();
+    counter++;
+    var newRow = jQuery('<tr><td div contentEditable=true data-placeholder="Qualifier" name="qualifier" id="qualifier' + counter + '"/></td><td div contentEditable=true data-placeholder="Name" name="name' +
+        counter + '"/></td><td div contentEditable=true data-placeholder="Team" name="team' +
+        counter + '"/></td><td div contentEditable=true data-placeholder="auton" name="auton' + counter + '"/></td><td div contentEditable=true data-placeholder="rotor" name="rotor' + counter + '"/></td><td div contentEditable=true data-placeholder="gears" name="gears' + counter + '"/></td><td div contentEditable=true data-placeholder="fouls" name="fouls' + counter + '"/></td><td div contentEditable=true data-placeholder="hopper" name="hopper' + counter + '"/></td><td div contentEditable=true data-placeholder="defense" name="defense' + counter + '"/></td><td div contentEditable=true data-placeholder="climb" name="climb' + counter + '"/></td><td div contentEditable=true data-placeholder="highgoal" name="highgoal' + counter + '"/></td><td div contentEditable=true data-placeholder="highgoalscore" name="highgoalscore' + counter + '"/></td><td div contentEditable=true data-placeholder="lowgoal" name="lowgoal' + counter + '"/></td><td div contentEditable=true data-placeholder="lowgoalscore" name="lowgoalscore' + counter + '"/></td><td div contentEditable=true data-placeholder="shooting" name="shooting' + counter + '"/></td><td div contentEditable=true data-placeholder="productive" name="productive' + counter + '"/></td><td div contentEditable=true data-placeholder="teamwork" name="teamwork' + counter + '"/></td><td div contentEditable=true data-placeholder="patterns" name="patterns' + counter + '"/></td><td div contentEditable=true data-placeholder="comments" name="comments' + counter + '"/></td><td div contentEditable=true data-placeholder="score" name="score' + counter + '"/></td> </tr>');
+    jQuery('table.Scouting').append(newRow);
+});
+});//]]> 
+
+</script>
+
+  
+</head>
+
+<body>
+<body onload="checkEdits()">
+  <table class="Scouting" border=1 cellspacing=0 cellpadding=6 align='center'>
+  <tr>
+  <td><b>Qualfier</td>
+  <td><b>Name</td>
+  <td><b>Team #</td>
+  <td><b>Has Auton</td>
+  <td><b>Got Rotor turning during Auton?</td>
+  <td><b>Number of Gears robot got during teleop</td>
+  <td><b>Any Fouls during teleop?</td>
+  <td><b>Hopper used?</td>
+  <td><b>Plays Defense?</td>
+  <td><b>Can Climb?</td>
+  <td><b>High Goal Robot?</td>
+  <td><b>How Many Scored in High Robot</td>
+  <td><b>Low Goal Robot?</td>
+  <td><b>How Many Scored in Low Goal?</td>
+  <td><b>Is the shooting Accuracy good?</td>
+  <td><b>Driver Productive</td>
+  <td><b>Any Teamwork</td>
+  <td><b>Any Patterns?</td>
+  <td><b>Any Comments?</td>
+  <td><b>Final Score</td>
+
+  </tr>
+
+
+   <tr>
+<td div contentEditable=true data-placeholder="Qualifier" name="qualifier" id="qualifier" /></div></td>
+<td div contentEditable=true data-placeholder="Name" name="name" id="name" /></div></td>
+<td div contentEditable=true data-placeholder="Team #" name="team" id="team" /></div></td>
+<td div contentEditable=true data-placeholder="Has Auton?" name="auton" id="auton" /></div></td>
+<td div contentEditable=true data-placeholder="Rotor" name="rotor" id="rotor" /></div></td>
+<td div contentEditable=true data-placeholder="Gears" name="gears" id="gears" /></div></td>
+<td div contentEditable=true data-placeholder="Fouls during auton" name="fouls" id="fouls" /></div></td>
+<td div contentEditable=true data-placeholder="Hopper" name="hopper" id="hopper" /></div></td>
+<td div contentEditable=true data-placeholder="defense" name="defense" id="defense" /></div></td>
+<td div contentEditable=true data-placeholder="climb" name="climb" id="climb" /></div></td>
+<td div contentEditable=true data-placeholder="High Goal" name="highgoal" id="highgoal" /></div></td>
+<td div contentEditable=true data-placeholder="High Goal Score" name="highgoalscore" id="highgoalscore" /></div></td>
+<td div contentEditable=true data-placeholder="Low Goal" name="lowgoal" id="lowgoal" /></div></td>
+<td div contentEditable=true data-placeholder="Low Goal Score" name="lowgoalscore" id="lowgoalscore" /></div></td>
+<td div contentEditable=true data-placeholder="Shooting" name="shooting" id="shooting" /></div></td>
+<td div contentEditable=true data-placeholder="Drivers Productive" name="productive" id="productive" /></div></td>
+<td div contentEditable=true data-placeholder="Teamwork?" name="teamwork" id="teamwork" /></div></td>
+<td div contentEditable=true data-placeholder="Patterns" name="patterns" id="patterns" /></div></td>
+<td div contentEditable=true data-placeholder="Comments" name="comments" id="comments" /></div></td>
+<td div contentEditable=true data-placeholder="Final Score" name="score" id="score" /></div></td>
+
+
+  </tr>
+  </table>
+  <center> 
+<a href="#" class="add-author"><b> <h1> New Row </h1> </b></a>
+  
+  <script>
+  // tell the embed parent frame the height of the content
+  if (window.parent && window.parent.parent){
+    window.parent.parent.postMessage(["resultsFrame", {
+      height: document.body.getBoundingClientRect().height,
+      slug: "yUfhL"
+    }], "*")
+  }
+</script>
+
+</body>
+
+<button>Export HTML table to CSV file</button>
+    <script> 
+    function download_csv(csv, filename) {
+    var csvFile;
+    var downloadLink;
+
+    // CSV FILE
+    csvFile = new Blob([csv], {type: "text/csv"});
+
+    // Download link
+    downloadLink = document.createElement("a");
+
+    // File name
+    downloadLink.download = filename;
+
+    // We have to create a link to the file
+    downloadLink.href = window.URL.createObjectURL(csvFile);
+
+    // Make sure that the link is not displayed
+    downloadLink.style.display = "none";
+
+    // Add the link to your DOM
+    document.body.appendChild(downloadLink);
+
+    // Lanzamos
+    downloadLink.click();
+}
+
+function export_table_to_csv(html, filename) {
+    var csv = [];
+    var rows = document.querySelectorAll("table tr");
+    
+    for (var i = 0; i < rows.length; i++) {
+        var row = [], cols = rows[i].querySelectorAll("td, th");
+        
+        for (var j = 0; j < cols.length; j++) 
+            row.push(cols[j].innerText);
+        
+        csv.push(row.join(","));        
+    }
+
+    // Download CSV
+    download_csv(csv.join("\n"), filename);
+}
+
+document.querySelector("button").addEventListener("click", function () {
+    var html = document.querySelector("table").outerHTML;
+    export_table_to_csv(html, "table.csv");
+});
+
+</script>
+   
+<input type="button" value="save my edits" onclick="saveEdits()"/>
+</html> 
+

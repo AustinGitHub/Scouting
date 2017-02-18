@@ -1,0 +1,205 @@
+<html> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
+</script> <span style='word-wrap:break-word'>
+
+<script> 
+function postContactToGoogle() {
+var team=$('#team').val();
+var match=$('#match').val();
+var auton=$("input[type='radio'][name='auton']:checked").val();
+var fouls1=$("input[type='radio'][name='fouls1']:checked").val();
+var rotor=$("input[type='radio'][name='rotor']:checked").val();
+
+var Gear=$('#Gear').val();
+var Fouls=$("input[type='radio'][name='Fouls']:checked").val();
+var Hopper=$("input[type='radio'][name='Hopper']:checked").val();
+var Defense=$("input[type='radio'][name='Defense']:checked").val();
+var Climbs=$("input[type='radio'][name='Climbs']:checked").val();
+var High=$("input[type='radio'][name='High']:checked").val();
+var high=$('#high').val();
+var Low=$("input[type='radio'][name='Low']:checked").val();
+var low=$('#low').val();
+var Accuracy=$('#Accuracy').val();
+
+var drivers=$("input[type='radio'][name='drivers']:checked").val();
+var Teamwork=$("input[type='radio'][name='Teamwork']:checked").val();
+var Patterns=$('#Patterns').val();
+var Comments=$('#Comments').val();
+
+
+$.ajax({
+	url:"https://docs.google.com/forms/d/e/1FAIpQLScq0jVBGTn1MvMQgWLPkp-iauM3yX6yhAhcFuXaLCTTg7ic6w/formResponse",data:
+	{"entry.389141880":team,
+	"entry.1781672098":match,
+	"entry.1381791179":auton,
+	"entry.401450250":fouls1,
+	"entry.24008183":rotor,
+	"entry.148696139":Gear,
+	"entry.2133511350":Fouls,
+	"entry.915332050":Hopper,
+	"entry.915752525":Defense,
+	"entry.1036256543":Climbs,
+	"entry.1713501804":High,
+	"entry.566177060":high,
+	"entry.722881516":Low,
+	"entry.1995621056":low,
+	"entry.48262510":Accuracy,
+	"entry.580621413":drivers,
+	"entry.1120300775":Teamwork,
+	"entry.2134689567":Patterns,
+	"entry.658723661":Comments
+
+
+},type:"POST",dataType:"xml",statusCode: {0:function() { window.location.replace("file:///C:/Users/Austin/Documents/html%20to%20ss.html");},200:function(){window.location.replace("file:///C:/Users/Austin/Documents/html%20to%20ss.html");}}
+
+});
+}
+
+</script> 
+</head>
+<body> 
+<h1> FILL OUT EVERYTHING (based on Scouting Sheet we have so far) 
+
+
+</h1>
+
+
+
+
+<form>
+<b> 
+Team # </b> <br/> 
+<input id="team" type="text" name="team" placeholder="Team" > <br/> 
+<b>  <br />
+Match # <br/> </b>
+<input id="match" type="text" name="match" placeholder="Match"  > 
+<br/> 
+
+
+<h1> Autonomous Period </h1>
+
+<b>
+Has Autonomous? <br/> </b>
+<input id="auton"  type="radio" name="auton" placeholder="auton" value ="Yes"  > Yes  <br /> 
+<input id="auton"  type="radio" name="auton" placeholder="auton" value="No" > No <br /> 
+<br/> 
+
+
+<b>
+Fouls? <br/> </b>
+<input id="fouls1" type="radio" name="fouls1" placeholder="fouls1" value ="Yes" > Yes  <br />
+<input id="fouls1" type="radio" name="fouls1" placeholder="fouls1" value ="No" > No <br /> 
+<br/> 
+
+<b>
+Rotor Turn? <br/> </b>
+<input id="rotor" type="radio" name="rotor" placeholder="Rotor" value ="Yes" > Yes <br /> 
+<input id="rotor" type="radio" name="rotor" placeholder="Rotor" value ="No" > No <br /> 
+<br/> 
+
+
+
+<h1> Teleop. </h1>
+
+
+Number of Gears? <br/> </b>
+<input id="Gear" type="text" name="Gear" placeholder="Number of Gears" >   <br /> 
+
+<br/> <br/> 
+
+
+
+Foul? <br/> </b>
+<input id="Fouls" type="radio" name="Fouls" placeholder="Fouls" value ="Yes" > Yes <br /> 
+ <input id="Fouls" type="radio" name="Fouls" placeholder="Fouls" value ="No"> No <br /> 
+<br/> <br/> 
+
+
+
+
+Hopper Used? <br/> </b>
+<input id="Hopper" type="radio" name="Hopper" placeholder="Hopper" value ="Yes" > Yes <br /> 
+ <input id="Hopper" type="radio" name="Hopper" placeholder="Hopper" value ="No"> No <br /> 
+<br/> <br/> 
+
+
+Plays Defense? <br/> </b>
+<input id="Defense" type="radio" name="Defense" placeholder="Defense" value ="Yes" > Yes  <br /> 
+ <input id="Defense" type="radio" name="Defense" placeholder="Defense" value ="No"> No <br /> 
+<br/> 
+<br/> 
+
+Climbs? <br/> </b>
+<input id="Climbs" type="radio" name="Climbs" placeholder="Climbs" value ="Yes" > Yes <br /> 
+ <input id="Climbs" type="radio" name="Climbs" placeholder="Climbs" value ="No"> No <br /> 
+<br/> 
+<br/> 
+
+
+High Goal Robot? <br/> </b>
+<input id="High" type="radio" name="High" placeholder="High" value ="Yes" > Yes <br /> 
+<input id="High" type="radio" name="High" placeholder="High" value ="No" > No <br />
+<br/> 
+<br /> 
+
+
+About how many Scored in High Goal? <br/> </b>
+<input id="high" type="text" name="high" placeholder="# in High goal"  >  <br /> 
+<br />
+
+Low Goal Robot? <br/> </b>
+<input id="Low" type="radio" name="Low" placeholder="Low" value ="Yes" > Yes <br /> 
+<input id="Low" type="radio" name="Low" placeholder="Low" value="No"> No </br /> 
+
+<br/> 
+
+About how many Scored in Low Goal? <br/> </b>
+<input id="low" type="text" name="low" placeholder="# in Low goal"  >  <br /> 
+
+
+<br/>
+
+Shooting Accuracy? <br/> </b>
+<input id="Accuracy" type="text" name="Accuracy" placeholder="Accuracy?">  <br />
+
+<br/>
+
+
+<h1> Extra Data </h1>
+
+Were the drivers productive? <br/> </b>
+<input id="drivers" type="radio" name="drivers" placeholder="drivers" value ="Yes" > Yes  
+ <input id="drivers" type="radio" name="drivers" placeholder="drivers" value ="No"> No
+<br/> <br/> 
+
+
+Teamwork? <br/> </b>
+<input id="Teamwork" type="radio" name="Teamwork" placeholder="Teamwork" value ="Yes" > Yes 
+ <input id="Teamwork" type="radio" name="Teamwork" placeholder="Teamwork" value ="No"> No
+<br/> <br/> 
+
+
+
+
+<b> 
+Patterns: </b> <br/> 
+<input id="Patterns" type="text" name="Patterns" placeholder="Patterns" > <br/>
+<b> 
+<br/> 
+
+<b> 
+Comments: </b> <br/> 
+<input id="Comments" type="text" name="Comments" placeholder="Comments"  > <br/>
+<b> 
+ 
+
+
+<h3> Make sure everything is filled out  </font> <br /> 
+<input id="ButtonSubmit" name="" type="button" value="Send" onclick="postContactToGoogle()"/> 
+
+
+</form>
+</body>
+</html>

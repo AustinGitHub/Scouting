@@ -1,0 +1,130 @@
+<html> 
+<script> 
+$(document).ready(function() {
+    var table = $('#example').DataTable();
+ 
+    $('button').click( function() {
+        var data = table.$('input, select').serialize();
+        alert(
+            "The following data would have been submitted to the server: \n\n"+
+            data.substr( 0, 120 )+'...'
+        );
+        return false;
+    } );
+} );
+</script>
+
+<script> 
+window.onload = function() {
+
+  document.getElementById('container').onclick = function(event) {
+    var span, input, text;
+
+    // Get the event (handle MS difference)
+    event = event || window.event;
+
+    // Get the root element of the event (handle MS difference)
+    span = event.target || event.srcElement;
+
+    // If it's a span...
+    if (span && span.tagName.toUpperCase() === "SPAN") {
+     
+
+      // Get its text
+      text = span.innerHTML;
+
+      // Create an input
+      input = document.createElement("input");
+      input.type = "text";
+      input.name = "text";
+      input.size = Math.max(text.length / 4 * 3, 4);
+      span.parentNode.insertBefore(input, span);
+
+
+
+      // Focus it, hook blur to undo
+      // input.focus();
+      input.onblur = function() {
+        // Remove the input
+
+
+        span.parentNode.removeChild(input);
+
+        // Update the span
+        span.innerHTML = input.value;
+
+        // Show the span again
+        span.style.display = "";
+      };
+    };
+  };
+};
+</script>
+
+
+
+
+<p id="container">
+<table> 
+<h1>
+<tr> 
+<th> Name:  </th>
+<th>  Team # </th>
+<th> Can it shoot? </th>
+</tr>
+<td><span> Name?</span> </td>
+<td>  <span> Team? </span> </td>
+<td> <span>  Yes or No? </span> </td>
+</p> 
+  <button>Export HTML table to CSV file</button>
+
+<script> 
+    function download_csv(csv, filename) {
+    var csvFile;
+    var downloadLink;
+
+    // CSV FILE
+    csvFile = new Blob([csv], {type: "text/csv"});
+
+    // Download link
+    downloadLink = document.createElement("a");
+
+    // File name
+    downloadLink.download = filename;
+
+    // We have to create a link to the file
+    downloadLink.href = window.URL.createObjectURL(csvFile);
+
+    // Make sure that the link is not displayed
+    downloadLink.style.display = "none";
+
+    // Add the link to your DOM
+    document.body.appendChild(downloadLink);
+
+    // Lanzamos
+    downloadLink.click();
+}
+
+function export_table_to_csv(html, filename) {
+	var csv = [];
+	var rows = document.querySelectorAll("table tr");
+	
+    for (var i = 0; i < rows.length; i++) {
+		var row = [], cols = rows[i].querySelectorAll("td, th, input[type='text']");
+		
+        for (var j = 0; j < cols.length; j++) 
+            row.push(cols[j].innerText);
+        
+		csv.push(row.join(","));		
+	}
+
+    // Download CSV
+    download_csv(csv.join("\n"), filename);
+}
+
+document.querySelector("button").addEventListener("click", function () {
+    var html = document.querySelector("table").outerHTML;
+	export_table_to_csv(html, "table.csv");
+});
+
+</script>
