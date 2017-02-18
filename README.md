@@ -1,7 +1,13 @@
 # Scouting
-Created By Austin Viens-DeRuisseau from Team 79 Krunch
-Software Subteam and Scouting Lead
+Created By Austin Viens-DeRuisseau <br /> 
+Team 79 Krunch <br /> 
+Software Subteam and Scouting Lead <br /> 
 2017
+
+<b> <h1> ** THIS IS SET UP FOR 2017 GAME CURRENTLY ** </h1> </b> 
+
+Need to contact me for help with getting it set up email me: aj_viens_deruisseau@yahoo.com 
+
 
 I created this since there are multiple ways to scout but not one definite way. 
 
