@@ -19,7 +19,7 @@ I created this since there are multiple ways to scout but not one definite way.
 5. Once it loads on chrome click the 3 dots next to the tab and click add to home screen <br /> 
 You are now able to access it from your home screen. 
 
-<b> How to CSV <b> <br />
+<b> How to CSV </b> <br />
 1. Then email the csv to the scout lead or whoever is taking charge of scouting <br />
 2. Put all the csv files into one folder (should be 6 if 6 people are scouting 1 team each) <br /> 
 3. Place the cmd file into that folder, then double click on it <br /> 
