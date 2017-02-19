@@ -35,7 +35,7 @@ You are now able to access it from your home screen.
 - Saves information locally through localStorage so you can close out of the file, close the browser completely and it will still save the data
 - No Security Issues, whereas with google sheets there is a possibility.
 
-<b> Down Fall </b> 
+<b> Down Fall </b> <br />
 Doesn't work on iPhones/Apple products because when they did their iOS 9 update, it ruined how you can use this locally. 
 https://gyazo.com/b65789f93b869518a59897f38a569d08 
 
