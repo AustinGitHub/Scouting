@@ -5,7 +5,7 @@ Software Subteam and Scouting Lead <br />
 2017
 
 <b> <h1> ** THIS IS SET UP FOR 2017 GAME CURRENTLY ** </h1> </b> 
-
+Example - http://team79scouting.orgfree.com/FinalScouting.html
 Need to contact me for help with getting it set up email me: aj_viens_deruisseau@yahoo.com 
 
 
