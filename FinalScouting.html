@@ -115,11 +115,12 @@ document.querySelector("button").addEventListener("click", function () {
 </script>
 <form class="Scouting" border=1 cellspacing=1 cellpadding=3 id="tbl"> 
 <tr> 
-<p> <h1> <b> Auton </p> </b> </h1>
-   <td><b><h2> Match # </td> <input type="text" placeholder="Match"  class="c1" /><br />
-  <td><b> Your Name: </td> <input type="text" placeholder="Your Name"  class="c1" /><br />
+
+    <td><b><h2> Your Name: </td> <input type="text" placeholder="Your Name"  class="c1" /><br />
+   <td><b> Match # </td> <input type="text" placeholder="Match"  class="c1" /><br />
    <td><b> Team # </td> <input type="text" placeholder="Team #"  class="c1" /><br />
 
+<p> <h1> <b> Auton </p> </b> </h1>
 <td><b>Has Auton?</td> <select class="c1" >
 <option> - </option>
 <option> Yes </option>
@@ -264,8 +265,8 @@ document.querySelector("button").addEventListener("click", function () {
 (function () { 
 //The Person Object used to store data in the LocalStorage 
 var Person = { 
-Match: "", 
 Name: "", 
+Match: "", 
 Team: "", 
 Auton:"", 
 Rotor: "", 
@@ -300,9 +301,9 @@ saveitem: function () {
     var lscount = localStorage.length; //Get the Length of the LocalStorage
     //Read all elements on UI using class name 
     var inputs = document.getElementsByClassName("c1"); 
-            Person.Match = inputs[0].value; 
-            Person.Team = inputs[1].value; 
-            Person.Name = inputs[2].value; 
+            Person.Name = inputs[0].value; 
+            Person.Match = inputs[1].value; 
+            Person.Team = inputs[2].value; 
             Person.Auton = inputs[3].value; 
             Person.Rotor = inputs[4].value;
             Person.Gears = inputs[5].value;
@@ -329,15 +330,15 @@ loaddata: function () {
     if (datacount > 0) 
     { 
         var render = "<table border='1'>"; 
-        render += "<tr><th>Match</th><th>Team</th><th>Name</th><th> Has Auton? </th><th> Rotor </th><th> Gears? </th><th> Scored in high goal? </th> <th> Scored in low goal </th>    <th> Fouls? </th> <th> Hopper </th> <th> Defense </th>  <th> High Goal  <th> Low Goal </th>  <th> Shooting </th> <th> Climb </th>  <th> Comments </th> <th> Qualifying Points </th> <th> Ranking Points </th>    </tr>"; 
+        render += "<tr><th>Name</th><th>Match</th><th>Team</th><th> Has Auton? </th><th> Rotor </th><th> Gears? </th><th> Scored in high goal? </th> <th> Scored in low goal </th>    <th> Fouls? </th> <th> Hopper </th> <th> Defense </th>  <th> High Goal  <th> Low Goal </th>  <th> Shooting </th> <th> Climb </th>  <th> Comments </th> <th> Qualifying Points </th> <th> Ranking Points </th>    </tr>"; 
         for (i = 0; i < datacount; i++) { 
             var key = localStorage.key(i); //Get  the Key 
             var person = localStorage.getItem(key); //Get Data from Key 
             var data = JSON.parse(person); //Parse the Data back into the object 
-            
-           render += "<tr><td>" + data.Match + "</td>";
+        
+           render += "<tr><td>" + data.Name + "</td>"; 
+           render += "<td>" + data.Match + "</td>";
            render += "<td>" + data.Team + " </td>"; 
-           render += "<td>" + data.Name + "</td>"; 
            render += "<td>" + data.Auton + "</td>";
            render += "<td>" + data.Rotor + "</td>";
            render += "<td>" + data.Gears + "</td>";
