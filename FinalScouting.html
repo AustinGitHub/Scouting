@@ -128,33 +128,40 @@ document.querySelector("button").addEventListener("click", function () {
 </select>
 <br />
 
-<td><b>Got Rotor spinning during auton?</td> <select class="c1" >
+<td><b>Gear Attempted? </td> <select class="c1" >
 <option> - </option>
 <option> Yes </option>
 <option> No </option>
 </select>
 <br />
 
-<td><b>Got Gears during auton?</td> <select class="c1" >
+<td><b>Gear Successfully in slot? </td> <select class="c1">
 <option> - </option>
 <option> Yes </option>
-<option> No </option> 
+<option> No </option>
+</select>
+<br />
+
+<td><b>Attempted Shooting </td> <select class="c1">
+<option> - </option>
+<option> Yes </option>
+<option> No </option>
 </select>
 <br />
 
 <td><b> How many balls scored in low goal during auton? </td> <select class="c1"> 
     <option> 0 </option>
-    <option> 1-3 </option>
-    <option> 4-6 </option>
-    <option> 7-10 </option>
+    <option> 1 - 3 </option>
+    <option> 4 - 6 </option>
+    <option> 7 - 10 </option>
     </select>
     <br />
   <!-- Ten being the max amount they are allowed to preload-->
 <td> <b> How many balls scored in high goal during auton? </td> <select class="c1">
     <option> 0 </option>
-    <option> 1-3 </option>
-    <option> 4-6 </option>
-    <option> 7-10 </option>  
+    <option> 1 - 3 </option>
+    <option> 4 - 6 </option>
+    <option> 7 - 10 </option>  
     </select>
     <br /> 
 
@@ -167,35 +174,31 @@ document.querySelector("button").addEventListener("click", function () {
 </select>
 <br />
 
-<td><b>Used Hopper?</td> <select class="c1" >
+<td><b> Gets Gears? <td> <select class="c1">
 <option> - </option>
 <option> Yes </option>
 <option> No </option>
 </select>
 <br />
 
-<td><b>Does it play defense at all?</td> <select class="c1" >
-<option> - </option>
-<option> Yes </option> 
-<option> No </option> 
-</select>
+<td><b> How Many Gears did they get </td> <input type="text" placeholder="# of Gears?" class="c1">
 <br />
 
 <td><b>High Goal Score </td> <select class="c1"> 
     <option> - </option>
-    <option> 0-5 </option>
-    <option> 5-20 </option>
-    <option> 20-40 </option>
-    <option> 40- 60+ </option>
+    <option> 0 - 5 </option>
+    <option> 5 - 20 </option>
+    <option> 20 - 40 </option>
+    <option> 40 - 60+ </option>
     </select> 
   <br /> 
 
 <td><b>Low Goal Score </td> <select class="c1"> 
     <option> - </option>
-    <option> 0-5 </option>
-    <option> 5-20 </option>
-    <option> 20-40 </option>
-    <option> 40- 60+ </option>
+    <option> 0 - 5 </option>
+    <option> 5 - 20 </option>
+    <option> 20 - 40 </option>
+    <option> 40 - 60+ </option>
     </select>
 <br />
 
@@ -221,15 +224,6 @@ document.querySelector("button").addEventListener("click", function () {
 <br />
 
 <p> <h1> <b> Competition Info </b> </h1> </p> 
-<td><b> Amount of Qualifying Points (QP) they Received </td> <select class="c1" > 
-<option> 0 </option> 
-<option> 1 </option> 
-<option> 2 </option> 
-<option> 3 </option> 
-<option> 4 </option> 
-</select>
-
-<br /> 
 
 <td><b> Amount of Ranking Points (RP) they Received </td> <select class="c1" > 
 <option> 0 </option> 
@@ -243,8 +237,8 @@ document.querySelector("button").addEventListener("click", function () {
 <input id="btnsave" type="button" value="Save" style="font-size : 20px;width:100px;height:50px;" /></td> 
 <!-- <input id="btnclear" type="button" value="Clear" style="font-size : 20px;width:100px;height:50px;" /></td>  -->
 <!-- Uncomment below if you want the clear data button -->
-<!--<input id="btnclearstorage" type="button" value="Clear all data!"   style="font-size : 17px;width:150px;height:50px;" /></td> --> 
-
+<!-- <input id="btnclearstorage" type="button" value="Clear all data!"   style="font-size : 17px;width:150px;height:50px;" /></td>  
+ -->
 </tr> 
 </table> 
 
@@ -269,19 +263,19 @@ Name: "",
 Match: "", 
 Team: "", 
 Auton:"", 
-Rotor: "", 
-Gears: "",
+GearAttempt: "", 
+GearSuccess: "",
+ShootingAttempt: "",
 Autonhighgoal: "",
 Autonlowgoal: "", 
 Fouls: "", 
-Hopper: "", 
-Defense:"", 
+GetsGears: "",
+GearNumber: "",
 Highgoal: "",
 Lowgoal: "",
 Shooting: "",
 Climb: "",
 Comments: "",
-Qp: "",
 Rp: ""
 
 };
@@ -305,19 +299,19 @@ saveitem: function () {
             Person.Match = inputs[1].value; 
             Person.Team = inputs[2].value; 
             Person.Auton = inputs[3].value; 
-            Person.Rotor = inputs[4].value;
-            Person.Gears = inputs[5].value;
-            Person.Autonhighgoal = inputs[6].value;
-            Person.Autonlowgoal  = inputs[7].value;
-            Person.Fouls = inputs[8].value;
-            Person.Hopper = inputs[9].value;
-            Person.Defense = inputs[10].value;
-            Person.Highgoal = inputs[11].value;
-            Person.Lowgoal = inputs[12].value;
-            Person.Shooting = inputs[13].value;
-            Person.Climb = inputs[14].value;
-            Person.Comments = inputs[15].value;
-            Person.Qp = inputs[16].value;
+            Person.GearAttempt = inputs[4].value;
+            Person.GearSuccess = inputs[5].value;
+            Person.ShootingAttempt = inputs[6].value;
+            Person.Autonhighgoal = inputs[7].value;
+            Person.Autonlowgoal  = inputs[8].value;
+            Person.Fouls = inputs[9].value;
+            Person.GetsGears = inputs[10].value;
+            Person.GearNumber = inputs[11].value;
+            Person.Highgoal = inputs[12].value;
+            Person.Lowgoal = inputs[13].value;
+            Person.Shooting = inputs[14].value;
+            Person.Climb = inputs[15].value;
+            Person.Comments = inputs[16].value;
             Person.Rp = inputs[17].value;
     //Convert the object into JSON ans store it in LocalStorage 
             localStorage.setItem("Person_" + lscount, JSON.stringify(Person)); 
@@ -330,7 +324,7 @@ loaddata: function () {
     if (datacount > 0) 
     { 
         var render = "<table border='1'>"; 
-        render += "<tr><th>Name</th><th>Match</th><th>Team</th><th> Has Auton? </th><th> Rotor </th><th> Gears? </th><th> Scored in high goal? </th> <th> Scored in low goal </th>    <th> Fouls? </th> <th> Hopper </th> <th> Defense </th>  <th> High Goal  <th> Low Goal </th>  <th> Shooting </th> <th> Climb </th>  <th> Comments </th> <th> Qualifying Points </th> <th> Ranking Points </th>    </tr>"; 
+        render += "<tr><th>Name</th><th>Match</th><th>Team</th><th> Has Auton? </th><th> Gears Attempted? </th><th> Gear Successfully in the slot </th><th> Shooting Attempted</th><th> Scored in high goal? </th> <th> Scored in low goal </th>   <th> Fouls? </th> <th> Gets Gears? </th> <th> Number of Gears </th> <th> High Goal  <th> Low Goal </th>  <th> Shooting </th> <th> Climb </th>  <th> Comments </th>  <th> Ranking Points </th>    </tr>"; 
         for (i = 0; i < datacount; i++) { 
             var key = localStorage.key(i); //Get  the Key 
             var person = localStorage.getItem(key); //Get Data from Key 
@@ -340,19 +334,19 @@ loaddata: function () {
            render += "<td>" + data.Match + "</td>";
            render += "<td>" + data.Team + " </td>"; 
            render += "<td>" + data.Auton + "</td>";
-           render += "<td>" + data.Rotor + "</td>";
-           render += "<td>" + data.Gears + "</td>";
+           render += "<td>" + data.GearAttempt + "</td>";
+           render += "<td>" + data.GearSuccess + "</td>";
+           render += "<td>" + data.ShootingAttempt + "</td>";
            render += "<td>" + data.Autonhighgoal + "</td>";
            render += "<td>" + data.Autonlowgoal + "</td>";
            render += "<td>" + data.Fouls + "</td>";
-           render += "<td>" + data.Hopper + "</td>";
-           render += "<td>" + data.Defense + "</td>";
+           render += "<td>" + data.GetsGears + "</td>";
+           render += "<td>" + data.GearNumber + "</td>";
            render += "<td>" + data.Highgoal + "</td>";
            render += "<td>" + data.Lowgoal+ "</td>";
            render += "<td>" + data.Shooting + "</td>";
            render += "<td>" + data.Climb + "</td>";
            render += "<td>" + data.Comments + "</td>";
-           render += "<td>" + data.Qp + "</td>";
            render += "<td>" + data.Rp + "</td>";
           
         } 
@@ -383,7 +377,7 @@ btnsave.addEventListener('click', applogic.saveitem, false);
 //Clear LocalStorage 
 // var btnclearstorage = document.getElementById('btnclearstorage'); 
 // btnclearstorage.addEventListener('click', applogic.clearstorage, false); 
-//On Load of window load data from local storage 
+// On Load of window load data from local storage 
 window.onload = function () { 
 applogic.loaddata(); 
 }; 
