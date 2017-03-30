@@ -219,7 +219,7 @@ document.querySelector("button").addEventListener("click", function () {
 <input id="btnsave" type="button" value="Save" style="font-size : 20px;width:100px;height:50px;" /></td> 
 <!-- <input id="btnclear" type="button" value="Clear" style="font-size : 20px;width:100px;height:50px;" /></td>  -->
 <!-- Uncomment below if you want the clear data button -->
-<!-- <input id="btnclearstorage" type="button" value="Clear all data!"   style="font-size : 17px;width:150px;height:50px;" /></td>   -->
+<input id="btnclearstorage" type="button" value="Clear all data!"   style="font-size : 17px;width:150px;height:50px;" /></td>  
 
 </tr> 
 </table> 
@@ -343,8 +343,8 @@ btnsave.addEventListener('click', applogic.saveitem, false);
 // btnclear.addEventListener('click', applogic.clearuielements, false); 
 
 //Clear LocalStorage 
-// var btnclearstorage = document.getElementById('btnclearstorage'); 
-// btnclearstorage.addEventListener('click', applogic.clearstorage, false); 
+var btnclearstorage = document.getElementById('btnclearstorage'); 
+btnclearstorage.addEventListener('click', applogic.clearstorage, false); 
 // On Load of window load data from local storage 
 window.onload = function () { 
 applogic.loaddata(); 
