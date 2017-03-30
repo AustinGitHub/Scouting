@@ -22,10 +22,9 @@ You are now able to access it from your home screen.
 <b> How to CSV </b> <br />
 1. Click export to csv at the top of the scouting sheet <br />
 2. This will export all the data from the table into a csv. <br />
-3. Eemail the csv to the scout lead or whoever is taking charge of scouting <br />
+3. Email the csv to the scout lead or whoever is taking charge of scouting <br />
 4. Put all the csv files into one folder (should be 6 if 6 people are scouting 1 team each) <br /> 
-5. Place the cmd file into that folder, then double click on it <br /> 
-6. This will take all 6 or so files and combine them into one file. Top row is excluded from all the others and only keeps one top row, so no need to worry about having the same top row 6 times in one file <br /> 
+5. And then just copy and past all of the data into one csv. <br /> 
 
 
 
