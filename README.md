@@ -46,3 +46,4 @@ In the branch Older-Ver is my other ways of doing this but didn't work exactly h
 In the near time future I will make this into an app that will perform the same things but will make it work on both devices. 
 I will update this sheet with each years game and what the requirements will be for it. 
 Again, if you need help feel free to contact me. 
+Edit: 2521 made an app of what I wanted to do exactly, check it out https://github.com/SouthEugeneRoboticsTeam/Robot-Scouter honestly one of the best out there.
