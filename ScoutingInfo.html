@@ -1,0 +1,381 @@
+<!-- DONT CHANGE -->
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style type="text/css">
+
+
+
+<style>
+body
+{
+margin:0px; auto;
+padding:0px;
+font-family:helvetica;
+}
+#wrapper
+{
+  width:90px;
+  padding:0px;
+  margin:0px auto;
+  font-family:helvetica;
+  text-align:center;
+}
+h1
+{
+  text-align:center;
+  font-size:35px;
+  color:#2E2E2E;
+  padding:10px;
+}
+h1 p
+{
+    font-size:20px;
+    margin:0px;
+    color:#585858;
+}
+td
+{
+    width:200px;
+    text-align:center;
+}
+input[type="button"]
+{
+    margin-top:50px;
+}
+
+</style>
+
+    <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+  
+  <style type="text/css">
+    [contentEditable=true]:empty:not(:focus):before{
+    content:attr(data-placeholder) }
+div{
+height:16px;    
+border:0px solid black;
+
+
+  
+  </style>
+  <!-- DONT CHANGE ANY OF THIS -->
+<center> 
+  <button style="font-size : 20px;width:200px;height:50px;">Export To CSV File</button>
+    <script> 
+    function download_csv(csv, filename) {
+    var csvFile;
+    var downloadLink;
+
+    // CSV FILE
+    csvFile = new Blob([csv], {type: "text/csv"});
+
+    // Download link
+    downloadLink = document.createElement("a");
+
+    // File name
+    downloadLink.download = filename;
+
+    // We have to create a link to the file
+    downloadLink.href = window.URL.createObjectURL(csvFile);
+
+    // Make sure that the link is not displayed
+    downloadLink.style.display = "none";
+
+    
+    document.body.appendChild(downloadLink);
+
+    
+    downloadLink.click();
+}
+// Dont change this
+function export_table_to_csv(html, filename) {
+    var csv = [];
+    var rows = document.querySelectorAll("table tr");
+    
+    for (var i = 0; i < rows.length; i++) {
+        var row = [], cols = rows[i].querySelectorAll("td, th");
+        
+        for (var j = 0; j < cols.length; j++) 
+            row.push(cols[j].innerText);
+        
+        csv.push(row.join(","));        
+    }
+
+    // Download CSV
+    download_csv(csv.join("\n"), filename);
+}
+
+document.querySelector("button").addEventListener("click", function () {
+    var html = document.querySelector("table").outerHTML;
+    export_table_to_csv(html, "table.csv");
+});
+
+</script>
+<!-- This is the table -->
+<!-- This is where you start changing things
+If you need help with this let me know. 
+1. Each table data (td) should correspond to the number of entries you want. So if you want 9 entries you need 9 table datas. If
+2. If you are using a dropdown you use select, give it the class of c1. 
+3. don't forget to end tag your select, if not, it will look funky as well. 
+4. If you want users to type, make sure you put placeholder and then the text, so it gives them a light gray text in the textbox and reminds them what they are doing.
+
+
+ -->
+<form class="Scouting" border=1 cellspacing=1 cellpadding=3 id="tbl"> 
+<tr> 
+
+    <td><b><h2> Your Name: </td> <input type="text" placeholder="Your Name"  class="c1" /><br />
+   <td><b> Match # </td> <input type="text" placeholder="Match"  class="c1" /><br />
+   <td><b> Team # </td> <input type="text" placeholder="Team #"  class="c1" /><br />
+<br />
+
+
+<p> <h1> <b> Auton </p> </b> </h1>
+<td><b>Type of Auton?</td> <select class="c1" >
+<option> None </option>
+<option> Move Auto </option>
+<option> Successful Center Gear </option>
+<option> Successful Side Gear </option>
+<option> Failed side or center gear </option>
+<option> shoots</option>
+</select>
+<br />
+
+<td><b> Hits hopper in auton? </b> </td> <select class="c1">
+<option> No </option>
+<option> Yes </option>
+</select>
+<br />
+
+
+<td> <b> How much KPA scored in high goal during auton? </td> <select class="c1">
+    <option> 0 </option>
+    <option> 1 - 3 KPA</option>
+    <option> 4 - 6 KPA</option>
+    <option> 7 - 10 KPA</option> 
+    <option> 11 - 16 KPA</option>
+    <option> 17 - 25 KPA</option>
+    <option> 26+ KPA</option>
+    </select>
+    <br /> 
+
+<td><b> How much KPA scored in low goal during auton? </td> <select class="c1"> 
+    <option> 0 </option>
+    <option> 1 - 3 KPA</option>
+    <option> 4 - 6 KPA</option>
+    <option> 7 - 10 KPA</option> 
+    <option> 11 - 16 KPA</option>
+    <option> 17 - 25 KPA</option>
+    <option> 26+ KPA</option>
+    </select>
+    <br />
+  <!-- Ten being the max amount they are allowed to preload-->
+
+
+
+<p> <h1> <b>  Teleop </p> </b> </h1>
+
+<td><b> How Many Gears did they get </td> <input type="text" placeholder="# of Gears?" class="c1">
+<br />
+
+
+<td><b>High Goal KPA if they shot </td> <select class="c1"> 
+    <option> 0 </option>
+     <option> 1 - 3 KPA </option>
+    <option> 4 - 6 KPA</option>
+    <option> 7 - 10 KPA</option> 
+    <option> 11 - 16 KPA</option>
+    <option> 17 - 25 KPA</option>
+    <option> 26+ KPA</option>
+    </select> 
+  <br /> 
+
+<td><b>Low Goal KPA if they dumped balls</td> <select class="c1"> 
+    <option> 0 </option>
+     <option> 1 - 3 KPA</option>
+    <option> 4 - 6 KPA</option>
+    <option> 7 - 10 KPA</option> 
+    <option> 11 - 16 KPA</option>
+    <option> 17 - 25 KPA</option>
+    <option> 26+ KPA</option>
+    </select>
+<br />
+
+<td><b> How good is their shooting accuracy?</td> <select class="c1" >
+<option> None </option>
+<option> Bad </option>
+<option> Medium (makes at least half their shots) </option>
+<option> Good (makes most of their shots) </option>
+</select>
+ <br /> 
+
+<td><b>Does their robot climb</td> <select class="c1" >
+<option> No </option>
+<option> Yes </option>
+</select>
+<br />
+
+<p> <h1> <b> Extra Data </p> </b> </h1>
+
+<td><b> Any Comments </td> <input type="text" placeholder="Comments"  class="c1" />
+
+<br />
+
+
+<!-- Save button -->
+
+<input id="btnsave" type="button" value="Save" style="font-size : 20px;width:100px;height:50px;" /></td> 
+<!-- Below is the clear data button and the clear local storage button-->
+
+<!-- <input id="btnclear" type="button" value="Clear" style="font-size : 20px;width:100px;height:50px;" /></td>  -->
+<!-- Uncomment below if you want the clear data button -->
+<!-- <input id="btnclearstorage" type="button" value="Clear all data!"   style="font-size : 17px;width:150px;height:50px;" /></td>   -->
+
+</tr> 
+</table> 
+
+<!-- Dont delete the br/s -->
+
+<br />
+<br />
+<br />
+<br />
+<div id="dvcontainer">
+</div> 
+<script> 
+(function () { 
+//The Person Object used to store data in the LocalStorage 
+var Person = { 
+// this is creating your variables that you are saving and it is also the variables that you will use throughout the code. So if you have an input that is asking for hang, make sure you specify your variables what you are asking, ex. asking for hang, have variable called hang/climb.
+
+Name: "", 
+Match: "", 
+Team: "", 
+Auton:"", 
+Hopper: "",
+Autonhighgoal: "",
+Autonlowgoal: "", 
+GearNumber: "",
+Highgoal: "",
+Lowgoal: "",
+Shooting: "",
+Climb: "",
+Comments: "",
+
+
+};
+// Dont change
+//JavaScript object containing methods for LocalStorage management 
+var applogic = {
+//Clear All Entries, by reading all elements having class as c1 
+clearuielements: function () { 
+    var inputs = document.getElementsByClassName("c1"); 
+    for (i = 0; i < inputs.length; i++) { 
+        inputs[i].value = ""; 
+    } 
+},
+//Save Entry in the Localstorage by eading values entered in the 
+//UI 
+saveitem: function () { 
+    var lscount = localStorage.length; //Get the Length of the LocalStorage
+    //Read all elements on UI using class name 
+    var inputs = document.getElementsByClassName("c1"); 
+
+    // Inputs start at 0 and upward. Make sure you start at 0 because that is how counting works in coding. If you have 10 entries, you should have inputs value of 0 to 9
+            Person.Name = inputs[0].value; 
+            Person.Match = inputs[1].value; 
+            Person.Team = inputs[2].value; 
+            Person.Auton = inputs[3].value; 
+            Person.Hopper = inputs[4].value;
+            Person.Autonhighgoal = inputs[5].value;
+            Person.Autonlowgoal  = inputs[6].value;
+            Person.GearNumber = inputs[7].value;
+            Person.Highgoal = inputs[8].value;
+            Person.Lowgoal = inputs[9].value;
+            Person.Shooting = inputs[10].value;
+            Person.Climb = inputs[11].value;
+            Person.Comments = inputs[12].value;
+    //Convert the object into JSON ans store it in LocalStorage 
+            localStorage.setItem("Person_" + lscount, JSON.stringify(Person)); 
+    //Reload the Page 
+            location.reload(); 
+},
+//Method to Read Data from the local Storage 
+loaddata: function () { 
+    var datacount = localStorage.length; 
+    if (datacount > 0) 
+    { 
+
+      // this one is tricky to explain, mainly because you can't space this out that well to make you understand. This is basically creating the header row of the table and what it will say once downloaded to csv. If you have 10 entries, there should be 10 table headers, if you are off by one it will look funky.
+        var render = "<table border='1'>"; 
+        render += "<tr><th>Name</th><th>Match</th><th>Team</th><th> Has Auton? </th><th> Hopper Hit during auton?</th><th>KPA Scored in high goal? </th> <th>KPA Scored in low goal </th> <th> Number of Gears </th> <th> KPA for High Goal  <th> KPA for Low Goal </th>  <th> Shooting Accuracy </th> <th> Climb? </th>  <th> Comments </th>  </tr>"; 
+        for (i = 0; i < datacount; i++) { 
+            var key = localStorage.key(i); //Get  the Key 
+            var person = localStorage.getItem(key); //Get Data from Key 
+            var data = JSON.parse(person); //Parse the Data back into the object 
+        
+
+// Each render should correspond with each data entry being placed in. For example if there are 10 things that people have to fill out then you should have 10 renders.
+
+           render += "<tr><td>" + data.Name + "</td>"; 
+           render += "<td>" + data.Match + "</td>";
+           render += "<td>" + data.Team + " </td>"; 
+           render += "<td>" + data.Auton + "</td>";
+           render += "<td>" + data.Hopper + "</td>";
+           render += "<td>" + data.Autonhighgoal + "</td>";
+           render += "<td>" + data.Autonlowgoal + "</td>";
+           render += "<td>" + data.GearNumber + "</td>";
+           render += "<td>" + data.Highgoal + "</td>";
+           render += "<td>" + data.Lowgoal+ "</td>";
+           render += "<td>" + data.Shooting + "</td>";
+           render += "<td>" + data.Climb + "</td>";
+           render += "<td>" + data.Comments + "</td>";
+          
+        } 
+        render+="</table>"; 
+        dvcontainer.innerHTML = render; 
+    } 
+},
+//Method to Clear Storage, this is what clears the storage, keep the code here because it wont run unless the button calls the function
+clearstorage: function () { 
+    var storagecount = localStorage.length; //Get the Storage Count 
+    if (storagecount > 0) 
+    { 
+        for (i = 0; i < storagecount; i++) { 
+            localStorage.clear(); 
+        } 
+    } 
+    window.location.reload(); 
+}
+};
+//Save object into the localstorage 
+var btnsave = document.getElementById('btnsave'); 
+btnsave.addEventListener('click', applogic.saveitem, false); 
+
+// This is for the clearing of the table, only uncomment it if you want the button that allows you to clear data table. 
+
+//Clear all UI Elements 
+// var btnclear = document.getElementById('btnclear'); 
+// btnclear.addEventListener('click', applogic.clearuielements, false); 
+
+//Clear LocalStorage 
+// var btnclearstorage = document.getElementById('btnclearstorage'); 
+// btnclearstorage.addEventListener('click', applogic.clearstorage, false); 
+// On Load of window load data from local storage 
+// Dont delete this below, it's basically saying onload/reload it is loading the saved data each time. 
+window.onload = function () { 
+applogic.loaddata(); 
+}; 
+})(); 
+
+</script>
+
+
+
+<center> 
+<br />
+
